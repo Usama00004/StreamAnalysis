@@ -1,0 +1,17 @@
+----------------Start Zookeeper---------------
+C:\BigDataLocalSetup\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+----------------Start Kafka-------------------
+C:\BigDataLocalSetup\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+----------------(Producer)Create topic------------------
+C:\BigDataLocalSetup\kafka>.\bin\windows\kafka-topics.bat --create --topic myfirsttopic --bootstrap-server localhost:9092
+
+----------------(Producer)Create Message------------------
+C:\BigDataLocalSetup\kafka>.\bin\windows\kafka-console-producer.bat --topic myfirsttopic --bootstrap-server localhost:9092
+
+----------------(Consumer)Consume Message------------------
+C:\BigDataLocalSetup\kafka>.\bin\windows\kafka-console-consumer.bat --topic myfirsttopic --from-beginning --bootstrap-server localhost:9092
+
